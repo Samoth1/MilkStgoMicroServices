@@ -1,0 +1,21 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8081/
+  application:
+    name: pagoproveedor-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081/
+  datasource:
+    url: jdbc:postgresql://localhost:5432/milkypagodb
+    username: postgres
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
