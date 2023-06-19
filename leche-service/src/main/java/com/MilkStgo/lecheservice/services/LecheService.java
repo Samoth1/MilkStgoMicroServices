@@ -34,7 +34,6 @@ public class LecheService {
         return lecheRepository.findByProveedor(proveedor).getSolido_total();
     }
 
-    @Generated
     public String guardar(MultipartFile file){
         String filename = file.getOriginalFilename();
         if(filename != null){
@@ -56,7 +55,6 @@ public class LecheService {
         }
     }
 
-    @Generated
     public void leerCsv(String direccion){
         BufferedReader bf = null;
         lecheRepository.deleteAll();
