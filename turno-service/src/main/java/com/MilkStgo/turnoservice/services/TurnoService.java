@@ -4,6 +4,7 @@ import com.MilkStgo.turnoservice.entities.TurnoEntity;
 import com.MilkStgo.turnoservice.repositories.TurnoRepository;
 import lombok.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 
+@Service
 public class TurnoService {
     @Autowired
     private TurnoRepository turnoRepository;
