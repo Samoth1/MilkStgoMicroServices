@@ -54,7 +54,7 @@ public class TurnoService {
     }
 
     @Generated
-    public void leerCsv(String direccion){
+    public String leerCsv(String direccion){
         BufferedReader bf = null;
         turnoRepository.deleteAll();
         try{
@@ -69,9 +69,9 @@ public class TurnoService {
                     guardarDataDB(bfRead.split(";")[0], bfRead.split(";")[1], bfRead.split(";")[2], bfRead.split(";")[3]);
                 }
             }
-            System.out.println("Archivo leido exitosamente");
+            return "Acopio cargado con exito";
         }catch(Exception e){
-            System.err.println("No se encontro el archivo");
+            return "No se encontro el archivo";
         }finally{
             if(bf != null){
                 try{

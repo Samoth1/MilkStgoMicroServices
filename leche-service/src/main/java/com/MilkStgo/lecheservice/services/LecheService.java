@@ -55,7 +55,7 @@ public class LecheService {
         }
     }
 
-    public void leerCsv(String direccion){
+    public String leerCsv(String direccion){
         BufferedReader bf = null;
         lecheRepository.deleteAll();
         try{
@@ -70,9 +70,9 @@ public class LecheService {
                     guardarDataDB(bfRead.split(";")[0], bfRead.split(";")[1], bfRead.split(";")[2]);
                 }
             }
-            System.out.println("Archivo leido exitosamente");
+            return  "Archivo leido exitosamente";
         }catch(Exception e){
-            System.err.println("No se encontro el archivo");
+            return "No se encontro el archivo";
         }finally{
             if(bf != null){
                 try{
