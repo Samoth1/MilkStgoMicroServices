@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+@Service
 public class LecheService {
     @Autowired
     private LecheRepository lecheRepository;
