@@ -29,16 +29,16 @@ spring:
         - id: leche-service
           uri: lb://leche-service
           predicates:
-            - Path=/leches/**
+            - Path=/leche/**
         - id: turno-service
           uri: lb://turno-service
           predicates:
-            - Path=/turnos/**
+            - Path=/turno/**
         - id: proveedor-service
           uri: lb://proveedor-service
           predicates:
-            - Path=/proveedores/**
+            - Path=/proveedor/**
         - id: pagoproveedor-service
           uri: lb://pagoproveedor-service
           predicates:
-            - Path=/pagoproveedores/**
+            - Path=/pagoproveedor/**
