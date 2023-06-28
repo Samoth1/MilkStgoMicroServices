@@ -24,32 +24,32 @@ public class PagoProveedorService {
 
     // REST CONTROLLER PARA PROVEEDOR
     public String getCategoria(String codigo){
-        return restTemplate.getForObject("http://proveedor-service/proveedor/getCategoria/"+ codigo, String.class);
+        return restTemplate.getForObject("http://proveedor-service/proveedor/categoria/"+ codigo, String.class);
     }
     public String getNombre(String codigo){
-        return restTemplate.getForObject("http://proveedor-service/proveedor/getNombre/"+ codigo, String.class);
+        return restTemplate.getForObject("http://proveedor-service/proveedor/nombre/"+ codigo, String.class);
     }
     public String getRetencion(String codigo){
-        return restTemplate.getForObject("http://proveedor-service/proveedor/getRetencion/"+ codigo, String.class);
+        return restTemplate.getForObject("http://proveedor-service/proveedor/retencion/"+ codigo, String.class);
     }
 
     // REST CONTROLLER PARA LECHE
     public LecheModel getDataProveedor(String codigo){
-        return restTemplate.getForObject("http://leche-service/leche/dataPoveedor/"+ codigo, LecheModel.class);
+        return restTemplate.getForObject("http://leche-service/leche/dataproveedor/"+ codigo, LecheModel.class);
     }
     public String getGrasa(String codigo){
-        return restTemplate.getForObject("http://leche-service/leche/getGrasa/"+ codigo, String.class);
+        return restTemplate.getForObject("http://leche-service/leche/grasa/"+ codigo, String.class);
     }
     public String getST(String codigo){
-        return restTemplate.getForObject("http://leche-service/leche/getST/"+ codigo, String.class);
+        return restTemplate.getForObject("http://leche-service/leche/st/"+ codigo, String.class);
     }
 
     // REST CONTROLLER PARA TURNO
     public ArrayList<String> getDataProveedores(){
-        return restTemplate.getForObject("http://turno-service/turno/dataProveedores/", ArrayList.class);
+        return restTemplate.getForObject("http://turno-service/turno/dataproveedores/", ArrayList.class);
     }
     public ArrayList<TurnoModel> getDataTurnos(){
-        return restTemplate.getForObject("http://turno-service/turno/dataTurnos/", ArrayList.class);
+        return restTemplate.getForObject("http://turno-service/turno/dataturnos/", ArrayList.class);
     }
 
 

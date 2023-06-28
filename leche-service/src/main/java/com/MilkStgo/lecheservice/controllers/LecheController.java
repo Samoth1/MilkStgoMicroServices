@@ -13,17 +13,17 @@ public class LecheController {
     @Autowired
     LecheService lecheService;
 
-    @GetMapping("/dataPoveedor/{codigo}")
+    @GetMapping("/dataproveedor/{codigo}")
     public ResponseEntity<LecheEntity> dataProveedor(@PathVariable("codigo") String codigo) {
         return ResponseEntity.ok(lecheService.obtenerDataProveedor(codigo));
     }
 
-    @GetMapping("/getGrasa/{codigo}")
+    @GetMapping("/grasa/{codigo}")
     public ResponseEntity<String> getGrasa(@PathVariable("codigo") String codigo){
         return ResponseEntity.ok(lecheService.obtenerGrasa(codigo));
     }
 
-    @GetMapping("/getST/{codigo}")
+    @GetMapping("/st/{codigo}")
     public ResponseEntity<String> getST(@PathVariable("codigo") String codigo){
         return ResponseEntity.ok(lecheService.obtenerSolidoTotal(codigo));
     }

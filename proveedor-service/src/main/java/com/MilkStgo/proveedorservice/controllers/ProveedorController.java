@@ -16,21 +16,31 @@ public class ProveedorController {
     @Autowired
     ProveedorService proveedorService;
 
-    @GetMapping("/getCategoria/{codigo}")
+    @GetMapping("/categoria/{codigo}")
     public ResponseEntity<String> categoriaPago(@PathVariable("codigo") String codigo) {
         return ResponseEntity.ok(proveedorService.obtenerCategoria(codigo));
     }
 
-    @GetMapping("/getNombre/{codigo}")
+    @GetMapping("/nombre/{codigo}")
     public ResponseEntity<String> nombreProveedor(@PathVariable("codigo") String codigo) {
         return ResponseEntity.ok(proveedorService.obtenerNombre(codigo));
     }
 
-    @GetMapping("/getRetencion/{codigo}")
+    @GetMapping("/retencion/{codigo}")
     public ResponseEntity<String> retencionProveedor(@PathVariable("codigo") String codigo) {
         return ResponseEntity.ok(proveedorService.obtenerRetencion(codigo));
     }
 
-    //añadir controladores
+    @PostMapping
+    public ResponseEntity<?> guardarProveedor(@RequestBody ProveedorEntity proveedor){
+        proveedorService.guardarProveedor(proveedor.getCodigo(), proveedor.getNombre(), proveedor.getCategoria(),  proveedor.getRetencion());
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<ArrayList<ProveedorEntity>> getProveedores(){
+        ArrayList<ProveedorEntity> proveedores = proveedorService.obtenerProveedores();
+        return  ResponseEntity.ok(proveedores);
+    }
 
 }

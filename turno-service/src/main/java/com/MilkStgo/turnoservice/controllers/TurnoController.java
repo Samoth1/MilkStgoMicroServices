@@ -16,12 +16,12 @@ public class TurnoController {
     @Autowired
     TurnoService turnoService;
 
-    @GetMapping("/dataTurnos")
+    @GetMapping("/dataturnos")
     public ResponseEntity<ArrayList<TurnoEntity>> dataTurnos() {
         return ResponseEntity.ok(turnoService.obtenerDataTurnos());
     }
 
-    @GetMapping("/dataProveedores")
+    @GetMapping("/dataproveedores")
     public ResponseEntity<ArrayList<String>> dataProveedor() {
         return ResponseEntity.ok(turnoService.obtenerProveedores());
     }
