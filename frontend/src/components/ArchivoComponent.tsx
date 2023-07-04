@@ -1,6 +1,7 @@
 import React, { Component, ChangeEvent } from 'react';
 import LecheService from '../services/LecheService';
 import TurnoService from '../services/TurnoService';
+import NavBar from './NavbarComponent';
 import { Grid, Row } from 'rsuite';
 
 interface ArchivoState {
@@ -79,6 +80,7 @@ class ArchivoComponent extends Component<{}, ArchivoState> {
         <Grid fluid>
           {pasoActual === 1 && (
             <div>
+              <NavBar></NavBar>
               <h2>Subir archivo Turnos</h2>
               <Row style={{ marginBottom: '20px', marginTop: '20px' }}>
                 <input type="file" onChange={(event) => this.onChangeHandler(event, 1)} />
@@ -93,6 +95,7 @@ class ArchivoComponent extends Component<{}, ArchivoState> {
 
           {pasoActual === 2 && (
             <div>
+              <NavBar></NavBar>
               <h2>Subir archivo Leche</h2>
               <Row style={{ marginBottom: '20px', marginTop: '20px' }}>
                 <input type="file" onChange={(event) => this.onChangeHandler(event, 2)} />

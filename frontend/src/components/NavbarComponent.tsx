@@ -3,7 +3,7 @@ import { Navbar } from 'rsuite';
 
 const NavBar: React.FC = () => (
   <Navbar>
-    <Navbar.Brand href="/">Home</Navbar.Brand>
+    <Navbar.Brand href="/home">Home</Navbar.Brand>
   </Navbar>
 );
 

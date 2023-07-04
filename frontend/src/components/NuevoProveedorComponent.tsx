@@ -1,7 +1,7 @@
 import React, { Component, ChangeEvent } from 'react';
 import ProveedorService from '../services/ProveedorService';
-import { Form, ButtonToolbar, Button, SelectPicker } from 'rsuite';
 import NavBar from './NavbarComponent';
+import { Form, ButtonToolbar, Button, SelectPicker } from 'rsuite';
 
 interface NuevoProveedorState {
   codigo: string;
