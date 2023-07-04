@@ -1,14 +1,21 @@
 import axios from 'axios';
 
-const url = 'http://gateway-service:8080/proveedor';
+const url = 'http://localhost:8080/proveedor';
 
 class ProveedoresService {
   obtenerProveedores() {
     return axios.get(url);
   }
 
-  guardarProveedor(codigo: string, nombre: string, categoria: string, retencion: string) {
-    return axios.post(`${url}?codigo=${codigo}&nombre=${nombre}&categoria=${categoria}&retencion=${retencion}`);
+  nuevoProveedor(codigo: string, nombre: string, categoria: string, retencion: string) {
+    const proveedor = {
+      codigo: codigo,
+      nombre: nombre,
+      categoria: categoria,
+      retencion: retencion
+    };
+    console.log(proveedor);
+    return axios.post(url, proveedor);
   }
 }
 

@@ -39,7 +39,7 @@ class NuevoProveedorComponent extends Component<{}, NuevoProveedorState> {
 
   saveProveedor = (e: React.FormEvent) => {
     e.preventDefault();
-    ProveedorService.guardarProveedor(
+    ProveedorService.nuevoProveedor(
       this.state.codigo,
       this.state.nombre,
       this.state.categoria,
