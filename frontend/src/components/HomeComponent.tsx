@@ -28,6 +28,12 @@ export default class HomeComponent extends Component {
                 Subir Archivos
             </button>
           </Col>
+          <Col xs={8}>
+            <h1>Plantilla Pagos</h1>
+            <button onClick={() => this.redireccionar('/mostrarpago')}>
+                Mostrar Pagos
+            </button>
+          </Col>
         </Row>
         <br /><br /><br /><br /><br /><br />
       </Grid>

@@ -1,6 +1,7 @@
 import React, { Component, ChangeEvent } from 'react';
 import LecheService from '../services/LecheService';
 import TurnoService from '../services/TurnoService';
+import PagoProveedorService from '../services/PagoProveedorService';
 import NavBar from './NavbarComponent';
 import { Grid, Row } from 'rsuite';
 
@@ -60,8 +61,16 @@ class ArchivoComponent extends Component<{}, ArchivoState> {
     console.log(data1);
     console.log(data2);
 
-    TurnoService.subirTurno(data1);
-    LecheService.subirLeche(data2);
+    TurnoService.subirTurno(data1)
+      .then(res => {
+        LecheService.subirLeche(data2)
+          .then(res => {
+            PagoProveedorService.generarPagos()
+              .then(res => {
+                window.alert("Se han generado los pagos");
+              })
+          })
+      })
       
   }
 

@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PagoProveedorService {
@@ -46,12 +43,13 @@ public class PagoProveedorService {
 
     // REST CONTROLLER PARA TURNO
     public ArrayList<String> getDataProveedores(){
-        return restTemplate.getForObject("http://turno-service/turno/dataproveedores/", ArrayList.class);
+        String[] datas = restTemplate.getForObject("http://turno-service/turno/dataproveedores/", String[].class);
+        return new ArrayList<>(Arrays.stream(datas).toList());
     }
     public ArrayList<TurnoModel> getDataTurnos(){
-        return restTemplate.getForObject("http://turno-service/turno/dataturnos/", ArrayList.class);
+        TurnoModel[] turnos = restTemplate.getForObject("http://turno-service/turno/dataturnos/", TurnoModel[].class);
+        return new ArrayList<>(Arrays.stream(turnos).toList());
     }
-
 
     // NO SE SI ESTA BIEN UTILIZADO MODEL
     private ArrayList<TurnoModel> turnosFilters;
@@ -322,13 +320,14 @@ public class PagoProveedorService {
     }
 
     // REST TEMPLATE
-    public void plantillaPagos() {
+    public String plantillaPagos() {
         ArrayList<String> quincena = obtenerQuincena();
         ArrayList<String> proveedores = getDataProveedores();
         this.turnosFilters = getDataTurnos();
         for (String proveedor : proveedores) {
             reportePago(quincena.get(0), quincena.get(1), quincena.get(2), proveedor);
         }
+        return "Se han creado los pagos";
     }
 
     // REST TEMPLATE

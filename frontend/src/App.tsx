@@ -5,6 +5,7 @@ import "rsuite/dist/rsuite.min.css";
 import ArchivoComponent from "./components/ArchivoComponent";
 import ProveedoresComponent from "./components/ProveedoresComponent";
 import HomeComponent from "./components/HomeComponent";
+import PagosComponent from "./components/PagosComponent";
 
 function AppRouter() {
   return (
@@ -13,6 +14,7 @@ function AppRouter() {
         <Route path="/subirarchivos" element={<ArchivoComponent />} />
         <Route path="/mostrarproveedores" element={<ProveedoresComponent />} />
         <Route path="/home" element={<HomeComponent />} />
+        <Route path="/mostrarpago" element={<PagosComponent />} />
     </Routes>
   );
 }

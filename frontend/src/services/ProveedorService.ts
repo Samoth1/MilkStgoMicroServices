@@ -14,7 +14,6 @@ class ProveedoresService {
       categoria: categoria,
       retencion: retencion
     };
-    console.log(proveedor);
     return axios.post(url, proveedor);
   }
 }
